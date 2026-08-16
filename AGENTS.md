@@ -1,65 +1,120 @@
-# AGENTS.md - Synkra AIOX (Codex CLI)
+# AGENTS.md
 
-Este arquivo define as instrucoes do projeto para o Codex CLI.
+## Escopo
 
-<!-- AIOX-MANAGED-START: core -->
-## Core Rules
+Este repositório contém o Builders Performance: uma aplicação de produtividade
+gamificada em Next.js/TypeScript, empacotada para iOS e Android com Capacitor,
+com persistência e autenticação no Supabase e uma API FastAPI separada para o
+Builder Assistant. Estas instruções são locais ao repositório e devem ser
+confirmadas contra o código atual.
 
-1. Siga a Constitution em `.aiox-core/constitution.md`
-2. Priorize `CLI First -> Observability Second -> UI Third`
-3. Trabalhe por stories em `docs/stories/`
-4. Nao invente requisitos fora dos artefatos existentes
-<!-- AIOX-MANAGED-END: core -->
+## Regras de decisão
 
-<!-- AIOX-MANAGED-START: quality -->
-## Quality Gates
+- Código, configuração e estado observável vencem memória, suposição e documentação antiga.
+- A solicitação explícita do usuário define o escopo, salvo conflito com segurança ou regras superiores.
+- Não invente paths, APIs, credenciais, resultados de testes ou estado de produção.
+- Se duas interpretações mudarem materialmente o resultado, pare e pergunte.
+- Seja direto. Não elogie por hábito. Corrija premissas erradas com evidência.
 
-- Rode `npm run lint`
-- Rode `npm run typecheck`
-- Rode `npm test`
-- Atualize checklist e file list da story antes de concluir
-<!-- AIOX-MANAGED-END: quality -->
+## Arquitetura modular — regra absoluta
 
-<!-- AIOX-MANAGED-START: codebase -->
-## Project Map
+- Nenhum arquivo de código-fonte pode ultrapassar 500 linhas. O limite é absoluto.
+- A regra vale para TypeScript, TSX, JavaScript, Python, SQL, Swift, Java, Kotlin, testes e scripts.
+- Arquivos novos devem nascer abaixo do limite.
+- Arquivos existentes acima do limite não podem receber nova lógica substancial.
+  Extraia módulos antes de continuar.
+- Um módulo deve ter uma responsabilidade clara e uma interface pequena.
+- Não crie módulos gigantes, funções gigantes ou componentes que misturem domínio,
+  persistência, transporte e apresentação.
+- Prefira composição, funções pequenas e dependências explícitas.
+- Não crie abstrações de uso único nem camadas “para o futuro”.
+- Testes também são código e obedecem ao limite de 500 linhas.
 
-- Core framework: `.aiox-core/`
-- CLI entrypoints: `bin/`
-- Shared packages: `packages/`
-- Tests: `tests/`
-- Docs: `docs/`
-<!-- AIOX-MANAGED-END: codebase -->
+Verificação rápida:
 
-<!-- AIOX-MANAGED-START: commands -->
-## Common Commands
+```bash
+find app componentes hooks lib backend supabase __tests__ types ios android -type f \( -name '*.ts' -o -name '*.tsx' -o -name '*.js' -o -name '*.mjs' -o -name '*.py' -o -name '*.sql' -o -name '*.swift' -o -name '*.java' -o -name '*.kt' \) -exec sh -c 'for file do lines=$(wc -l < "$file"); [ "$lines" -gt 500 ] && printf "%s: %s linhas\\n" "$file" "$lines"; done' sh {} +
+```
 
-- `npm run sync:ide`
-- `npm run sync:ide:check`
-- `npm run sync:skills:codex`
-- `npm run sync:skills:codex:global` (opcional; neste repo o padrao e local-first)
-- `npm run validate:structure`
-- `npm run validate:agents`
-<!-- AIOX-MANAGED-END: commands -->
+## Antes de editar
 
-<!-- AIOX-MANAGED-START: shortcuts -->
-## Agent Shortcuts
+- Leia o arquivo alvo, seus chamadores e os testes relevantes.
+- Identifique o fluxo real: entrada, validação, domínio, persistência, resposta e UI.
+- Declare suposições relevantes antes de mudanças substanciais.
+- Consulte a documentação local e o `AGENTS.md` mais próximo do alvo.
+- Verifique o worktree. Preserve alterações que não pertencem à tarefa.
+- Não use `git reset --hard`, `git clean`, checkout destrutivo ou force push sem autorização explícita.
 
-Preferencia de ativacao no Codex CLI:
-1. Use `/skills` e selecione `aiox-<agent-id>` vindo de `.codex/skills` (ex.: `aiox-architect`)
-2. Se preferir, use os atalhos abaixo (`@architect`, `/architect`, etc.)
+## Implementação
 
-Interprete os atalhos abaixo carregando o arquivo correspondente em `.aiox-core/development/agents/` (fallback: `.codex/agents/`), renderize o greeting via `generate-greeting.js` e assuma a persona ate `*exit`:
+- Faça a menor mudança correta e siga os padrões do domínio afetado.
+- Não refatore código adjacente sem necessidade direta.
+- Remova apenas órfãos criados pela própria mudança.
+- Preserve analytics, integrações, contratos públicos e comportamento nativo fora do escopo.
+- O frontend usa App Router e exportação estática (`output: "export"`). Não presuma
+  a existência de um runtime Next.js no ambiente publicado.
+- O Capacitor consome `out/`. Mudanças que afetem recursos nativos devem considerar
+  sincronização e validação separada em iOS e Android.
+- Para Supabase, considere migração, RLS, grants, compatibilidade e dados existentes.
+- Para APIs, valide autenticação, autorização, entrada, erros, rate limits e idempotência.
+- Para o Builder Assistant, preserve a separação entre routers, services, models e utils.
+- Para integrações com Gemini, Google Calendar, Outlook, Redis ou Supabase, diferencie
+  falha de código de falha do provedor, rede ou credencial.
+- Para UI, preserve tokens, responsividade, acessibilidade e estados de erro/loading.
 
-- `@architect`, `/architect`, `/architect.md` -> `.aiox-core/development/agents/architect.md`
-- `@dev`, `/dev`, `/dev.md` -> `.aiox-core/development/agents/dev.md`
-- `@qa`, `/qa`, `/qa.md` -> `.aiox-core/development/agents/qa.md`
-- `@pm`, `/pm`, `/pm.md` -> `.aiox-core/development/agents/pm.md`
-- `@po`, `/po`, `/po.md` -> `.aiox-core/development/agents/po.md`
-- `@sm`, `/sm`, `/sm.md` -> `.aiox-core/development/agents/sm.md`
-- `@analyst`, `/analyst`, `/analyst.md` -> `.aiox-core/development/agents/analyst.md`
-- `@devops`, `/devops`, `/devops.md` -> `.aiox-core/development/agents/devops.md`
-- `@data-engineer`, `/data-engineer`, `/data-engineer.md` -> `.aiox-core/development/agents/data-engineer.md`
-- `@ux-design-expert`, `/ux-design-expert`, `/ux-design-expert.md` -> `.aiox-core/development/agents/ux-design-expert.md`
-- `@squad-creator`, `/squad-creator`, `/squad-creator.md` -> `.aiox-core/development/agents/squad-creator.md`
-- `@aiox-master`, `/aiox-master`, `/aiox-master.md` -> `.aiox-core/development/agents/aiox-master.md`
-<!-- AIOX-MANAGED-END: shortcuts -->
+## Mapa do repositório
+
+- `app/`: páginas, layouts, grupos de rotas e estados do Next.js App Router.
+- `componentes/`: UI compartilhada e componentes organizados por domínio.
+- `hooks/`: comportamento, consultas e estado compartilhado do frontend.
+- `lib/`: schemas, providers, Supabase, IA, calendário, Capacitor e utilitários.
+- `backend/app/`: API FastAPI, routers, services, models e utilitários do assistente.
+- `backend/docker-compose.yml`: API e Redis para execução local em contêineres.
+- `supabase/migrations/implementados/`: migrações SQL versionadas já adotadas pelo projeto.
+- `ios/` e `android/`: projetos nativos gerenciados pelo Capacitor.
+- `__tests__/` e testes próximos ao código: suíte Vitest do frontend.
+- `types/`: contratos TypeScript compartilhados.
+- `docs/`: escopo, decisões, relatórios e especificações do produto.
+- `public/`: assets públicos da aplicação web.
+
+## Comandos
+
+```bash
+npm run dev
+npm run lint
+npm run typecheck
+npm test
+npm run test:coverage
+npm run build
+npx cap sync
+cd backend && uvicorn app.main:app --reload
+docker compose -f backend/docker-compose.yml up --build
+```
+
+Use primeiro o teste ou comando mais estreito que cubra a alteração. A suíte Python
+não possui um comando de teste declarado no estado atual; não afirme que ela foi
+validada sem adicionar ou executar uma verificação real. Para release, rode os gates
+exigidos e declare qualquer verificação omitida.
+
+## Segurança e produção
+
+- Nunca exponha segredos de `.env`, Supabase, Gemini ou provedores em código, logs, commits ou respostas.
+- Não substitua credenciais reais por valores inventados.
+- Preserve a fronteira entre chaves públicas do frontend e segredos exclusivos do backend.
+- Mudanças de autenticação devem considerar middleware, `AuthProvider`, rotas protegidas e acesso administrativo.
+- Não declare produção saudável com base apenas em build local ou exportação estática concluída.
+- Para publicação web ou mobile, confirme SHA, artefato, ambiente, endpoint, autorização,
+  logs e estabilidade após a subida.
+- Diferencie claramente: implementado, validado localmente, empacotado, publicado e verificado em produção.
+
+## Comunicação e conclusão
+
+- Relate arquivos alterados, comandos executados, resultados e lacunas.
+- Não diga “100%” sem critérios e evidência correspondentes.
+- Achados fora do escopo devem ser listados, não corrigidos silenciosamente.
+- O texto deve ser curto, concreto e sem cerimônia.
+
+## Instruções locais
+
+Um `AGENTS.md` dentro de um subdiretório pode adicionar regras mais específicas
+para aquele domínio. Regras mais próximas do arquivo editado têm precedência.
