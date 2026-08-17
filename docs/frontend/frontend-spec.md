@@ -1,9 +1,9 @@
-# Especificacao Frontend & UX - Builders Performance
+# Especificacao Frontend & UX - FluvOS
 
 **Versao:** 1.0.0
 **Data:** 2026-01-29
 **Autor:** Equipe de Arquitetura Frontend
-**Projeto:** Builders Performance
+**Projeto:** FluvOS
 
 ---
 

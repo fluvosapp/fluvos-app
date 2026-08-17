@@ -55,7 +55,7 @@ export default function DesignSystemOverview() {
           Design System
         </h1>
         <p className="text-muted-foreground">
-          Catalogo vivo do Builders Performance — componentes, tokens, padroes e
+          Catalogo vivo do FluvOS — componentes, tokens, padroes e
           estados.
         </p>
       </div>

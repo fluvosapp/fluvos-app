@@ -13,7 +13,7 @@ const VIDEO_DEMO =
 export const etapasOnboarding: EtapaOnboarding[] = [
   {
     id: "bem-vindo",
-    titulo: "Bem-vindo ao Builders Performance",
+    titulo: "Bem-vindo ao FluvOS",
     descricao:
       "Prepare sua rotina para máxima clareza, foco e resultados todos os dias.",
     videoUrl: VIDEO_DEMO,
@@ -24,7 +24,7 @@ export const etapasOnboarding: EtapaOnboarding[] = [
     id: "visao-geral",
     titulo: "Visão geral",
     descricao:
-      "Entenda como o Builders Performance conecta foco, tarefas, hábitos e agenda em um único fluxo.",
+      "Entenda como o FluvOS conecta foco, tarefas, hábitos e agenda em um único fluxo.",
     videoUrl: VIDEO_DEMO,
     layout: "dividido",
   },

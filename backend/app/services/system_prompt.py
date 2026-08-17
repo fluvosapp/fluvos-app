@@ -124,7 +124,7 @@ def build_system_prompt(contexto: ContextoUsuario) -> str:
         except Exception:
             criado_formatado = "desconhecido"
 
-    return f"""Voce e o Builder Assistant, assistente de produtividade pessoal do app Builders Performance.
+    return f"""Voce e o Builder Assistant, assistente de produtividade pessoal do app FluvOS.
 Voce tem ACESSO TOTAL a todos os dados do usuario e pode executar acoes (criar, editar, excluir) via funcoes.
 
 PERFIL DO USUARIO:

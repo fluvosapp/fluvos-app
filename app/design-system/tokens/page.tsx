@@ -83,7 +83,7 @@ const CORES_CHART = [
 ] as const
 
 const TIPOGRAFIA = [
-  { nome: "Display", classe: "font-titulo text-4xl font-bold", texto: "Builders Performance" },
+  { nome: "Display", classe: "font-titulo text-4xl font-bold", texto: "FluvOS" },
   { nome: "H1", classe: "font-titulo text-3xl font-bold", texto: "Heading 1 — Sora Bold" },
   { nome: "H2", classe: "font-titulo text-2xl font-bold", texto: "Heading 2 — Sora Bold" },
   { nome: "H3", classe: "font-titulo text-xl font-semibold", texto: "Heading 3 — Sora Semibold" },
@@ -176,7 +176,7 @@ export default function TokensPage() {
           Design Tokens
         </h1>
         <p className="text-muted-foreground">
-          Fundacao visual do Builders Performance — cores, tipografia, espacamento,
+          Fundacao visual do FluvOS — cores, tipografia, espacamento,
           radius, sombras, motion e icones.
         </p>
       </div>

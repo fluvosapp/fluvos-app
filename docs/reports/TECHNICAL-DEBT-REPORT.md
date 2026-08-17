@@ -1,5 +1,5 @@
 # Relatorio de Debito Tecnico
-**Projeto:** Builders Performance
+**Projeto:** FluvOS
 **Data:** 2026-01-29
 **Versao:** 1.0
 
@@ -9,7 +9,7 @@
 
 ### Situacao Atual
 
-O Builders Performance e uma aplicacao de produtividade pessoal com funcionalidades de timer de foco, kanban de tarefas, rastreamento de habitos, agenda, cursos e sistema de gamificacao. Construido com tecnologias modernas (Next.js 16, React 19, Supabase), o produto tem uma base funcional solida, porem acumula 61 debitos tecnicos identificados em uma auditoria completa realizada por especialistas em arquitetura, banco de dados, experiencia do usuario e qualidade.
+O FluvOS e uma aplicacao de produtividade pessoal com funcionalidades de timer de foco, kanban de tarefas, rastreamento de habitos, agenda, cursos e sistema de gamificacao. Construido com tecnologias modernas (Next.js 16, React 19, Supabase), o produto tem uma base funcional solida, porem acumula 61 debitos tecnicos identificados em uma auditoria completa realizada por especialistas em arquitetura, banco de dados, experiencia do usuario e qualidade.
 
 Dos 61 debitos identificados, **8 sao criticos** e representam riscos imediatos ao negocio. O mais grave e uma **falha de seguranca** que permite que qualquer usuario autenticado manipule dados de outros usuarios -- incluindo pontos de experiencia, sessoes de foco e progresso em cursos. Alem disso, a aplicacao e **completamente inacessivel em dispositivos moveis** (smartphones e tablets), o que bloqueia diretamente o crescimento da base de usuarios. A aplicacao tambem opera com **zero cobertura de testes automatizados**, tornando qualquer alteracao futura um risco de quebra silenciosa.
 

@@ -1,5 +1,5 @@
 -- ============================================================================
--- BUILDERS PERFORMANCE - AUTH PROFILES TRIGGER
+-- FluvOS - AUTH PROFILES TRIGGER
 -- ============================================================================
 -- Este arquivo cria a trigger para sincronizar auth.users com public.users
 -- Quando um usuário faz signup, um registro é criado automaticamente na tabela users

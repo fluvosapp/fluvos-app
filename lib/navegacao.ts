@@ -24,7 +24,7 @@ export interface SecaoMenu {
 }
 
 export const marcaSidebar = {
-  titulo: "Builders Performance",
+  titulo: "FluvOS",
   icone: Hexagon,
 } as const
 

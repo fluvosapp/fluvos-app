@@ -1,6 +1,6 @@
-# Documento de Arquitetura do Sistema -- Builders Performance
+# Documento de Arquitetura do Sistema -- FluvOS
 
-**Projeto:** Builders Performance
+**Projeto:** FluvOS
 **Versao:** 1.0.0
 **Data:** 2026-01-29
 **Autor:** @architect (Aria) -- Synkra AIOS
@@ -10,7 +10,7 @@
 
 ## 1. Visao Geral do Sistema
 
-**Builders Performance** e um aplicativo de produtividade pessoal voltado para alunos da comunidade Builders. O sistema oferece timer de foco (Pomodoro/Deep Work), quadro Kanban de tarefas, rastreamento de habitos com streaks, calendario/agenda, cursos de aprendizado, metas/objetivos e um sistema de gamificacao com XP e niveis.
+**FluvOS** e um aplicativo de produtividade pessoal voltado para alunos da comunidade Builders. O sistema oferece timer de foco (Pomodoro/Deep Work), quadro Kanban de tarefas, rastreamento de habitos com streaks, calendario/agenda, cursos de aprendizado, metas/objetivos e um sistema de gamificacao com XP e niveis.
 
 ### 1.1 Stack Tecnologico
 

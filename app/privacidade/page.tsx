@@ -25,7 +25,7 @@ export default function PaginaPrivacidade() {
             <CartaoTitulo>Privacidade</CartaoTitulo>
             <CartaoDescricao>
               Transparência sobre os dados usados para oferecer a melhor
-              experiência no Builders Performance.
+              experiência no FluvOS.
             </CartaoDescricao>
           </CartaoCabecalho>
           <CartaoConteudo className="space-y-6 text-sm text-muted-foreground">

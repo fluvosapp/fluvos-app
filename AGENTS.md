@@ -2,7 +2,7 @@
 
 ## Escopo
 
-Este repositório contém o Builders Performance: uma aplicação de produtividade
+Este repositório contém o FluvOS: uma aplicação de produtividade
 gamificada em Next.js/TypeScript, empacotada para iOS e Android com Capacitor,
 com persistência e autenticação no Supabase e uma API FastAPI separada para o
 Builder Assistant. Estas instruções são locais ao repositório e devem ser

@@ -1,5 +1,5 @@
 -- ============================================================================
--- BUILDERS PERFORMANCE - CREATE ADMIN USER (TEMPLATE)
+-- FluvOS - CREATE ADMIN USER (TEMPLATE)
 -- ============================================================================
 -- ⚠️  SCRIPT OPERACIONAL - NÃO EXECUTAR EM PRODUÇÃO SEM AJUSTAR VARIÁVEIS
 -- ⚠️  Este script foi sanitizado para remover credenciais hardcoded.

@@ -56,7 +56,7 @@
 
 Justificativa detalhada:
 
-O Builders Performance tem **7 rotas principais** (Inicio, Foco, Tarefas, Habitos, Agenda, Cursos, Perfil) mais subrotas de cursos. Para um app de produtividade com uso frequente e diario, a bottom tab bar e o padrao mais adequado pelo seguinte:
+O FluvOS tem **7 rotas principais** (Inicio, Foco, Tarefas, Habitos, Agenda, Cursos, Perfil) mais subrotas de cursos. Para um app de produtividade com uso frequente e diario, a bottom tab bar e o padrao mais adequado pelo seguinte:
 
 - **Frequencia de uso**: O usuario acessa Foco, Tarefas e Habitos diariamente. Bottom tabs permitem acesso com um unico toque, sem abrir menus.
 - **Modelo mental**: Apps de produtividade como Todoist, Notion Mobile, e Forest usam bottom tabs. O usuario ja espera esse padrao.

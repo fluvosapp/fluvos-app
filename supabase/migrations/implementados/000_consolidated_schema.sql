@@ -1,5 +1,5 @@
 -- ============================================================================
--- BUILDERS PERFORMANCE - CONSOLIDATED DATABASE SCHEMA
+-- FluvOS - CONSOLIDATED DATABASE SCHEMA
 -- ============================================================================
 -- Este arquivo contém o schema completo e consolidado para todas as páginas:
 -- - /tarefas (Kanban de tarefas + pendências)
@@ -88,7 +88,7 @@ CREATE TABLE public.users (
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-COMMENT ON TABLE public.users IS 'Tabela de usuários do Builders Performance';
+COMMENT ON TABLE public.users IS 'Tabela de usuários do FluvOS';
 COMMENT ON COLUMN public.users.total_xp IS 'Total de XP acumulado pelo usuário';
 COMMENT ON COLUMN public.users.level IS 'Nível atual calculado com base no XP';
 COMMENT ON COLUMN public.users.streak_shields IS 'Proteções de streak disponíveis (máx 2/semana)';
@@ -118,7 +118,7 @@ CREATE TABLE public.tasks (
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-COMMENT ON TABLE public.tasks IS 'Tarefas do Kanban do Builders Performance';
+COMMENT ON TABLE public.tasks IS 'Tarefas do Kanban do FluvOS';
 COMMENT ON COLUMN public.tasks.tempo_gasto IS 'Tempo total gasto na tarefa em minutos';
 COMMENT ON COLUMN public.tasks.estimativa_tempo IS 'Estimativa de tempo para completar em minutos';
 COMMENT ON COLUMN public.tasks.xp_recompensa IS 'XP ganho ao completar a tarefa';

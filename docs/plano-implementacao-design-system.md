@@ -1,4 +1,4 @@
-# Plano de Implementacao do Design System — Builders Performance
+# Plano de Implementacao do Design System — FluvOS
 
 > **Prerequisito:** Design System Showcase (`/design-system`) completo (DS 1.0)
 >

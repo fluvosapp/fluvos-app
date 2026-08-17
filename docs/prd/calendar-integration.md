@@ -1,4 +1,4 @@
-# Builders Performance — Integração com Calendários Externos (Brownfield Enhancement PRD)
+# FluvOS — Integração com Calendários Externos (Brownfield Enhancement PRD)
 
 > **Versão:** 1.0.0
 > **Autor:** Morgan (PM Agent)
@@ -19,7 +19,7 @@
 
 ### 1.2 Estado Atual do Projeto
 
-**Builders Performance** é um app de produtividade pessoal com timer Pomodoro, Kanban, hábitos, calendário, cursos e gamificação XP/level. Construído com Next.js 16 App Router + Supabase + React Query + Radix UI + Tailwind CSS 4.
+**FluvOS** é um app de produtividade pessoal com timer Pomodoro, Kanban, hábitos, calendário, cursos e gamificação XP/level. Construído com Next.js 16 App Router + Supabase + React Query + Radix UI + Tailwind CSS 4.
 
 A página `/agenda` já possui:
 - CRUD completo de eventos via Supabase (RLS por `auth.uid()`)
@@ -43,7 +43,7 @@ A página `/agenda` já possui:
 
 **Tipo:** Integration with New Systems
 
-**Descrição:** Integrar a página `/agenda` com Google Calendar API e Microsoft Outlook Calendar (via Microsoft Graph API), permitindo sincronização bidirecional de eventos entre o Builders Performance e os calendários externos do usuário.
+**Descrição:** Integrar a página `/agenda` com Google Calendar API e Microsoft Outlook Calendar (via Microsoft Graph API), permitindo sincronização bidirecional de eventos entre o FluvOS e os calendários externos do usuário.
 
 **Avaliação de Impacto:** Significant Impact (substantial existing code changes)
 
@@ -56,15 +56,15 @@ A página `/agenda` já possui:
 
 ### 1.5 Objetivos
 
-- Permitir que o usuário conecte sua conta Google e/ou Outlook Calendar ao Builders Performance
+- Permitir que o usuário conecte sua conta Google e/ou Outlook Calendar ao FluvOS
 - Sincronizar eventos externos para visualização unificada na `/agenda`
-- Permitir criação de eventos no Builders Performance que sejam refletidos no calendário externo
+- Permitir criação de eventos no FluvOS que sejam refletidos no calendário externo
 - Indicar visualmente a origem de cada evento (Manual, Google, Outlook)
 - Manter a funcionalidade existente 100% intacta para usuários que não conectarem calendários
 
 ### 1.6 Contexto e Motivação
 
-A página `/agenda` atualmente funciona como um calendário isolado. Usuários de produtividade utilizam Google Calendar e Outlook como suas ferramentas primárias de agendamento. Sem integração, o Builders Performance não reflete a realidade da agenda do usuário, reduzindo a utilidade do recurso e forçando entrada manual dupla de dados.
+A página `/agenda` atualmente funciona como um calendário isolado. Usuários de produtividade utilizam Google Calendar e Outlook como suas ferramentas primárias de agendamento. Sem integração, o FluvOS não reflete a realidade da agenda do usuário, reduzindo a utilidade do recurso e forçando entrada manual dupla de dados.
 
 A integração com calendários externos transforma a `/agenda` de um calendário secundário em uma **visão unificada** da agenda do usuário, aumentando significativamente o valor e a aderência do app.
 
@@ -85,7 +85,7 @@ A integração com calendários externos transforma a `/agenda` de um calendári
 - **FR3:** O sistema deve importar eventos do Google Calendar para a tabela `events` com `calendario = 'Google'`
 - **FR4:** O sistema deve importar eventos do Outlook Calendar para a tabela `events` com `calendario = 'Outlook'`
 - **FR5:** A sincronização de leitura (import) deve buscar eventos em um range de -30 a +90 dias a partir da data atual
-- **FR6:** Eventos criados manualmente no Builders Performance (com `calendario = 'Manual'`) não devem ser enviados para calendários externos
+- **FR6:** Eventos criados manualmente no FluvOS (com `calendario = 'Manual'`) não devem ser enviados para calendários externos
 - **FR7:** O sistema deve exibir um badge visual indicando a origem do evento (Manual, Google, Outlook) no `evento-card.tsx`
 - **FR8:** O sistema deve permitir que o usuário desconecte um calendário externo a qualquer momento
 - **FR9:** Ao desconectar, os eventos importados daquele calendário devem ser removidos da tabela `events`
@@ -282,7 +282,7 @@ supabase/migrations/
 
 ## 6. Epic 1: Integração com Calendários Externos
 
-**Epic Goal:** Permitir que usuários do Builders Performance conectem Google Calendar e Outlook Calendar à página `/agenda`, visualizando todos os eventos em uma única interface.
+**Epic Goal:** Permitir que usuários do FluvOS conectem Google Calendar e Outlook Calendar à página `/agenda`, visualizando todos os eventos em uma única interface.
 
 **Integration Requirements:** Manter 100% de compatibilidade com a funcionalidade existente. Usuários sem calendários conectados não devem perceber nenhuma mudança.
 
@@ -354,7 +354,7 @@ supabase/migrations/
 ### Story 1.4 — Sincronização de Eventos (Import)
 
 > Como usuário,
-> Eu quero que meus eventos do Google Calendar e Outlook Calendar apareçam na minha agenda do Builders Performance,
+> Eu quero que meus eventos do Google Calendar e Outlook Calendar apareçam na minha agenda do FluvOS,
 > Para que eu tenha uma visão unificada de todos os meus compromissos.
 
 **Acceptance Criteria:**

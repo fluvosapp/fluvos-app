@@ -1,5 +1,5 @@
 /**
- * Design Tokens — Builders Performance v2
+ * Design Tokens — FluvOS v2
  *
  * Tokens tipados extraidos do design spec.
  * Referencia visual: ConstructHub dashboard (laranja coral, card-based, clean).

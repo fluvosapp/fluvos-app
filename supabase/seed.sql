@@ -1,5 +1,5 @@
 -- ============================================================================
--- BUILDERS PERFORMANCE - SEED DATA (Development Only)
+-- FluvOS - SEED DATA (Development Only)
 -- ============================================================================
 -- Este arquivo contém dados de seed para ambiente de desenvolvimento.
 -- NAO executar em producao.
@@ -95,12 +95,12 @@ ON CONFLICT (id) DO NOTHING;
 -- SECTION 3: COURSES, MODULES & LESSONS (from 008_create_courses_schema.sql)
 -- ============================================================================
 
--- Curso 1: Builders Performance Junior
+-- Curso 1: FluvOS Junior
 INSERT INTO public.courses (id, slug, titulo, descricao, categoria, nivel, destaque, ordem)
 VALUES (
   '11111111-aaaa-4111-8111-111111111111'::UUID,
   'builders-performance-junior',
-  'Builders Performance Junior',
+  'FluvOS Junior',
   'Fundamentos de produtividade, rotina e performance para iniciar sua jornada.',
   'Produtividade',
   'iniciante',
@@ -111,7 +111,7 @@ VALUES (
 -- Modulos do Curso 1
 INSERT INTO public.course_modules (id, course_id, titulo, descricao, ordem)
 VALUES
-  ('22221111-aaaa-4111-8111-111111111111'::UUID, '11111111-aaaa-4111-8111-111111111111'::UUID, 'Boas-vindas', 'Entenda o metodo e a visao do Builder Performance.', 1),
+  ('22221111-aaaa-4111-8111-111111111111'::UUID, '11111111-aaaa-4111-8111-111111111111'::UUID, 'Boas-vindas', 'Entenda o metodo e a visao do FluvOS.', 1),
   ('22222222-aaaa-4111-8111-111111111111'::UUID, '11111111-aaaa-4111-8111-111111111111'::UUID, 'Rotina que funciona', 'Estruturacao diaria e energia sustentavel.', 2)
 ON CONFLICT (id) DO NOTHING;
 

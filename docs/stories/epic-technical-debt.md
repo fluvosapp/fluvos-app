@@ -1,4 +1,4 @@
-# Epic: Resolucao de Debitos Tecnicos - Builders Performance
+# Epic: Resolucao de Debitos Tecnicos - FluvOS
 
 **Epic ID:** EPIC-TD-001
 **Data:** 2026-01-29
@@ -10,7 +10,7 @@
 
 ## Objetivo
 
-Eliminar 74 debitos tecnicos identificados na auditoria completa do Builders Performance + auditoria complementar pos-integracao de calendario, distribuidos em 7 ondas de resolucao (Onda 0 a Onda 6). O objetivo principal e tornar o produto seguro, acessivel em dispositivos moveis, testavel e sustentavel para evolucao futura.
+Eliminar 74 debitos tecnicos identificados na auditoria completa do FluvOS + auditoria complementar pos-integracao de calendario, distribuidos em 7 ondas de resolucao (Onda 0 a Onda 6). O objetivo principal e tornar o produto seguro, acessivel em dispositivos moveis, testavel e sustentavel para evolucao futura.
 
 Os debitos abrangem 4 areas: Sistema/Arquitetura (9 debitos), Database (31 debitos), Frontend/UX (18 debitos) e Cross-Cutting transversais (3 debitos). Adicionados 13 debitos pos-assessment (calendario + novos componentes). Dos 74 debitos, 8 sao CRITICAL, 24 sao HIGH, 29 sao MEDIUM e 13 sao LOW.
 

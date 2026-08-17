@@ -24,7 +24,7 @@ export default function PaginaTermos() {
           <CartaoCabecalho>
             <CartaoTitulo>Termos de uso</CartaoTitulo>
             <CartaoDescricao>
-              Regras gerais para uso do Builders Performance.
+              Regras gerais para uso do FluvOS.
             </CartaoDescricao>
           </CartaoCabecalho>
           <CartaoConteudo className="space-y-6 text-sm text-muted-foreground">

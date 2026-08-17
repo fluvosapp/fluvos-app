@@ -3,7 +3,7 @@ import { KeyboardResize } from "@capacitor/keyboard"
 
 const config: CapacitorConfig = {
   appId: "com.builders.performance",
-  appName: "Builders Performance",
+  appName: "FluvOS",
   webDir: "out",
   server: {
     androidScheme: "https",
@@ -34,7 +34,7 @@ const config: CapacitorConfig = {
   ios: {
     contentInset: "automatic",
     preferredContentMode: "mobile",
-    scheme: "Builders Performance",
+    scheme: "App",
   },
   android: {
     allowMixedContent: false,

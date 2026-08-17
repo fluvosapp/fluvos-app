@@ -1,5 +1,5 @@
 ---
-projeto: Builders Performance
+projeto: FluvOS
 tipo: pesquisa-visual
 tags:
   - builders
@@ -16,7 +16,7 @@ updated: 2026-01-30
 status: pesquisa-completa
 ---
 
-# 🔬 Pesquisa Visual — Refatoração Frontend Builder Performance
+# 🔬 Pesquisa Visual — Refatoração Frontend FluvOS
 
 [[I.A/Projetos Clientes/Builder Performance/00 - INDEX|← Voltar ao Index]]
 
@@ -24,7 +24,7 @@ status: pesquisa-completa
 
 ## 🎯 Objetivo da Pesquisa
 
-O app **Builder Performance** está com visual "morno/frio/pacato". A missão é encontrar referências visuais de apps minimalistas mas **vibrantes, energéticos e bold** para guiar a refatoração do frontend.
+O app **FluvOS** está com visual "morno/frio/pacato". A missão é encontrar referências visuais de apps minimalistas mas **vibrantes, energéticos e bold** para guiar a refatoração do frontend.
 
 **Problema identificado:** Interface sem personalidade, sem energia, sem vida
 **Meta:** Transformar em algo minimal mas **com atitude** — bold, vibrante, moderno
@@ -297,7 +297,7 @@ O app **Builder Performance** está com visual "morno/frio/pacato". A missão é
 
 ---
 
-## 💡 Recomendações para o Builder Performance
+## 💡 Recomendações para o FluvOS
 
 ### O que mudar para sair do "morno":
 

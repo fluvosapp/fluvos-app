@@ -1,5 +1,5 @@
 // ============================================================================
-// BUILDERS PERFORMANCE - TIPOS DO BANCO DE DADOS
+// FluvOS - TIPOS DO BANCO DE DADOS
 // ============================================================================
 // Arquivo consolidado de tipos TypeScript derivados do schema PostgreSQL.
 // Fonte única de verdade — TODO: substituir por `supabase gen types typescript`

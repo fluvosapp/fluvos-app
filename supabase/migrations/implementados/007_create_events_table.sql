@@ -1,5 +1,5 @@
 -- ============================================================================
--- BUILDERS PERFORMANCE - EVENTS TABLE MIGRATION (Idempotent)
+-- FluvOS - EVENTS TABLE MIGRATION (Idempotent)
 -- ============================================================================
 -- Tabela para eventos da agenda (página /agenda)
 --
@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS public.events (
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
-COMMENT ON TABLE public.events IS 'Eventos da agenda do Builders Performance';
+COMMENT ON TABLE public.events IS 'Eventos da agenda do FluvOS';
 COMMENT ON COLUMN public.events.data IS 'Data do evento (YYYY-MM-DD)';
 COMMENT ON COLUMN public.events.horario_inicio IS 'Horário de início (HH:MM)';
 COMMENT ON COLUMN public.events.horario_fim IS 'Horário de fim (HH:MM)';

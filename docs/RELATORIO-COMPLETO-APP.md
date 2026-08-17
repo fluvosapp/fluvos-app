@@ -1,4 +1,4 @@
-# Relatorio Completo - App Builder Performance
+# Relatorio Completo - FluvOS
 
 ## Data: 2026-01-31
 ## Status Geral: ~65% completo
@@ -7,7 +7,7 @@
 
 ## Resumo Executivo
 
-O **Builders Performance** e um app de produtividade pessoal gamificado construido com Next.js 16, React 19, Supabase e Tailwind CSS 4. O projeto possui uma base solida de infraestrutura (auth, banco de dados, React Query, design system) e a maioria das features principais tem frontend funcional. Porem, existem lacunas criticas: o **Assistente IA** (diferencial do produto) esta completamente mockado, o sistema de **gamificacao** tem bugs de formula nivel/XP, nao ha **testes automatizados** em producao, a **infraestrutura de deploy/CI-CD e inexistente**, e varias integracao externas planejadas nao foram implementadas. O app funciona localmente mas nao esta pronto para producao.
+O **FluvOS** e um app de produtividade pessoal gamificado construido com Next.js 16, React 19, Supabase e Tailwind CSS 4. O projeto possui uma base solida de infraestrutura (auth, banco de dados, React Query, design system) e a maioria das features principais tem frontend funcional. Porem, existem lacunas criticas: o **Assistente IA** (diferencial do produto) esta completamente mockado, o sistema de **gamificacao** tem bugs de formula nivel/XP, nao ha **testes automatizados** em producao, a **infraestrutura de deploy/CI-CD e inexistente**, e varias integracao externas planejadas nao foram implementadas. O app funciona localmente mas nao esta pronto para producao.
 
 ---
 

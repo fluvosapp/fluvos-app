@@ -19,7 +19,7 @@ const fonteTitulo = Sora({
 })
 
 export const metadata: Metadata = {
-  title: "Builders Performance",
+  title: "FluvOS",
   description:
     "App central de rotina diária para alunos da comunidade Builders.",
 }

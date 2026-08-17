@@ -6,8 +6,8 @@ Sim, deve ter topnav, mas nao é necessário bottom nav no App e também precisa
 Nao precisa ter hamburguer na topnav. Notificaçoes abre dropdown e perfil abre a página /perfil
   4. Bottom nav deve ser fixo na base? Ícones com texto sempre visíveis?
 Nao teremos bottom nav.
-  5. “BUILDERS PERFORMANCE” no topo deve ser texto simples ou com algum símbolo?
-Por enquanto algum simbolo de builders performance com algum icone minimalista que remeta a isso no caso nao no topo, mas sim na sidebar. Ah, e a sidebar nao deve aparecer na pagina /onboarding.
+  5. “FluvOS” no topo deve ser texto simples ou com algum símbolo?
+Por enquanto algum simbolo de FluvOS com algum icone minimalista que remeta a isso no caso nao no topo, mas sim na sidebar. Ah, e a sidebar nao deve aparecer na pagina /onboarding.
   6. Nível: usar exatamente “LEVEL 7 — CONSTRUTOR” e “2.150 / 3.200 XP”, ou valores diferentes?
 Pode usar valores mockados.
   7. Barra de progresso do nível: formato e porcentagem exata (ex.: 68%)?

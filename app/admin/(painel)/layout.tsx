@@ -76,7 +76,7 @@ function AdminSidebar() {
           </div>
           <div>
             <h1 className="text-sm font-bold text-white">Admin Panel</h1>
-            <p className="text-xs text-zinc-500">Builders Performance</p>
+            <p className="text-xs text-zinc-500">FluvOS</p>
           </div>
         </div>
       </div>

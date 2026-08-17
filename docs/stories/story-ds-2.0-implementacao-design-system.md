@@ -10,11 +10,11 @@
 
 ## Objetivo
 
-Migrar todas as paginas do app Builders Performance para utilizar os tokens, componentes e padroes de composicao definidos no design system (DS 1.0). Abordagem hibrida: tokens globais primeiro, depois migracao pagina por pagina.
+Migrar todas as paginas do app FluvOS para utilizar os tokens, componentes e padroes de composicao definidos no design system (DS 1.0). Abordagem hibrida: tokens globais primeiro, depois migracao pagina por pagina.
 
 ## User Story
 
-**As a** desenvolvedor e usuario do Builders Performance,
+**As a** desenvolvedor e usuario do FluvOS,
 **I want** que todas as paginas usem os componentes e tokens do design system,
 **so that** o app tenha consistencia visual, melhor acessibilidade, e seja mais facil de manter.
 

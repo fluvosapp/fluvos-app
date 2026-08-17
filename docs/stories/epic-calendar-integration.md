@@ -11,7 +11,7 @@
 
 ## Objetivo
 
-Integrar a pagina `/agenda` do Builders Performance com Google Calendar API e Microsoft Outlook Calendar (Microsoft Graph API), permitindo sincronizacao de leitura (import) de eventos externos. O usuario podera conectar suas contas via OAuth 2.0, visualizar todos os eventos em uma unica interface, e gerenciar suas conexoes.
+Integrar a pagina `/agenda` do FluvOS com Google Calendar API e Microsoft Outlook Calendar (Microsoft Graph API), permitindo sincronizacao de leitura (import) de eventos externos. O usuario podera conectar suas contas via OAuth 2.0, visualizar todos os eventos em uma unica interface, e gerenciar suas conexoes.
 
 Phase 1 foca exclusivamente em **import (read-only)**. Sincronizacao bidirecional (write) sera Phase 2.
 

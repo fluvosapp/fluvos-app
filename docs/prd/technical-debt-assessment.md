@@ -1,6 +1,6 @@
 # Technical Debt Assessment - FINAL
 
-**Projeto:** Builders Performance
+**Projeto:** FluvOS
 **Data:** 2026-01-29
 **Autor:** @architect (Aria) -- Synkra AIOS
 **Status:** FINAL -- Aprovado com condicoes pelo @qa

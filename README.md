@@ -3,10 +3,10 @@
 Plataforma mobile-first de produtividade que reúne tarefas, foco, hábitos,
 agenda, aprendizado e assistência por IA em uma única rotina operacional.
 
-> **Estado atual:** produto em desenvolvimento. O repositório ainda contém o
-> nome legado **Builders Performance** em metadados, identificadores nativos e
-> partes da documentação. Consulte [Estado técnico e limitações](#estado-técnico-e-limitações)
-> antes de preparar uma publicação.
+> **Estado atual:** produto em desenvolvimento. O repositório ainda contém
+> identificadores técnicos legados e documentos históricos. Consulte
+> [Estado técnico e limitações](#estado-técnico-e-limitações) antes de preparar
+> uma publicação.
 
 ## O que existe no produto
 
@@ -205,9 +205,9 @@ Use Xcode para o projeto iOS e Android Studio para o projeto Android. Recursos
 nativos configurados incluem splash screen, status bar, teclado, notificações e
 tratamento do botão voltar.
 
-O identificador atual é `com.builders.performance` e o nome nativo ainda é
-`Builders Performance`. Renomeie ambos de forma coordenada antes de publicar o
-FluvOS nas lojas.
+O nome nativo exibido é `FluvOS`, mas o identificador atual ainda é
+`com.builders.performance`. Migre o identificador de forma coordenada antes de
+publicar o aplicativo nas lojas.
 
 ## Comandos do projeto
 
@@ -258,8 +258,9 @@ Estes pontos foram identificados diretamente no código em 16 de agosto de 2026:
    Route Handlers correspondentes não estão presentes na árvore atual.
 3. Existem duas implementações do assistente: uma dentro do Next.js e outra em
    FastAPI. O caminho canônico de produção ainda precisa ser consolidado.
-4. Nome, metadata, `appId`, scheme e cores nativas ainda carregam a identidade
-   legada Builders Performance.
+4. `appId`, bundle identifier, pacote Java e ID do projeto Supabase ainda usam
+   identificadores técnicos legados. A migração precisa considerar lojas,
+   assinaturas, deep links e ambientes já provisionados.
 5. A raiz não possui arquivo de exemplo de ambiente. Use as tabelas deste README
    para criar `.env.local`; o backend mantém seu próprio exemplo.
 6. Documentos em `docs/` foram produzidos em momentos diferentes. Para decisões
