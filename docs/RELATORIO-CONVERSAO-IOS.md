@@ -1,7 +1,7 @@
 # Relatório de Viabilidade: Conversão Web App → iOS/Android
 
 **Data:** 28 de Janeiro de 2026
-**Projeto:** App Builder Performance
+**Projeto:** FluvOS
 **Prioridade:** iOS (primário) → Android (secundário)
 
 ---
@@ -318,7 +318,7 @@ export default nextConfig
 ```bash
 npm install @capacitor/core @capacitor/cli
 npm install @capacitor/ios @capacitor/android
-npx cap init "App Builder Performance" "com.appbuilder.performance"
+npx cap init "FluvOS" "com.appbuilder.performance"
 ```
 
 **Passo 3: Plugins Essenciais**

@@ -63,7 +63,7 @@ export function buildSystemPrompt(contexto: ContextoUsuario): string {
     `Streak: ${perf.streakDias} dias | Progresso nivel: ${perf.nivelProgresso}%`,
   ].join('\n')
 
-  return `Voce e o Builder Assistant, assistente de produtividade pessoal do app Builders Performance.
+  return `Voce e o Builder Assistant, assistente de produtividade pessoal do app FluvOS.
 Voce tem ACESSO TOTAL a todos os dados do usuario e pode executar acoes (criar, editar, excluir) via funcoes.
 
 PERFIL DO USUARIO:

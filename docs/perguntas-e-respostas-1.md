@@ -22,8 +22,8 @@ Sem preferência, pode usar qualquer fonte.
 Google Fonts
   12. O texto da UI deve ser exatamente como nos docs (PT-BR), ou posso ajustar microcopy?
 Sim, pode ajustar.
-  13. Há logo oficial? Se não, usamos apenas o texto “Builders Performance”?
-Por enquanto pode usar o texto Builders Performance
+  13. Há logo oficial? Se não, usamos apenas o texto “FluvOS”?
+Por enquanto pode usar o texto FluvOS
   14. Implemento light + dark tokens agora ou apenas light (dark só quando for pedido)?
 Light + Dark
   15. Quer um toggle de tema já na UI? Se sim, como fica?

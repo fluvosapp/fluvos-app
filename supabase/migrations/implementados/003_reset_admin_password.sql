@@ -1,5 +1,5 @@
 -- ============================================================================
--- BUILDERS PERFORMANCE - RESET USER PASSWORD (TEMPLATE)
+-- FluvOS - RESET USER PASSWORD (TEMPLATE)
 -- ============================================================================
 -- ⚠️  SCRIPT OPERACIONAL - NÃO EXECUTAR SEM AJUSTAR VARIÁVEIS
 -- ⚠️  Este script foi sanitizado para remover credenciais hardcoded.

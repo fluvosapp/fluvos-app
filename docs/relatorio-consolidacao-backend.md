@@ -1,14 +1,14 @@
 # Relatório de Consolidação do Backend
 
 **Data:** 2026-01-28
-**Projeto:** Builders Performance
+**Projeto:** FluvOS
 **Versão do Schema:** 1.0.0
 
 ---
 
 ## 1. Resumo Executivo
 
-Este relatório documenta a consolidação completa do schema de banco de dados do Builders Performance. Foram analisados os trabalhos de 3 agentes que criaram migrations separadas com diversos problemas, e um único arquivo SQL consolidado foi criado para substituí-los.
+Este relatório documenta a consolidação completa do schema de banco de dados do FluvOS. Foram analisados os trabalhos de 3 agentes que criaram migrations separadas com diversos problemas, e um único arquivo SQL consolidado foi criado para substituí-los.
 
 ### Resultado Final
 

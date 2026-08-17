@@ -172,7 +172,7 @@ export default function PaginaCriarConta() {
                   Crie seu perfil
                 </h1>
                 <p className="text-sm text-muted-foreground">
-                  É assim que você será visto no Builders Performance.
+                  É assim que você será visto no FluvOS.
                 </p>
               </div>
 

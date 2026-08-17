@@ -1,4 +1,4 @@
-# Design Spec v2 — Builders Performance
+# Design Spec v2 — FluvOS
 
 **Versao:** 2.0.0
 **Data:** 2026-01-30

@@ -164,7 +164,7 @@ Implementar o fluxo completo de OAuth 2.0 com Microsoft Graph API para Outlook C
 
 1. Ir para https://portal.azure.com/ → Azure Active Directory → App Registrations
 2. "New registration"
-3. Name: "Builders Performance"
+3. Name: "FluvOS"
 4. Supported account types: "Accounts in any organizational directory and personal Microsoft accounts"
 5. Redirect URI: Web → `http://localhost:3000/api/calendario/outlook/callback`
 6. Anotar Application (client) ID

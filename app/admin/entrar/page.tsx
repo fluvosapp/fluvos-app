@@ -54,7 +54,7 @@ export default function AdminLoginPage() {
             <Shield className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-2xl font-bold text-white">Admin Panel</h1>
-          <p className="text-zinc-400 mt-1">Builders Performance</p>
+          <p className="text-zinc-400 mt-1">FluvOS</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">

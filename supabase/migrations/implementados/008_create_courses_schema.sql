@@ -1,5 +1,5 @@
 -- ============================================================================
--- BUILDERS PERFORMANCE - COURSES SCHEMA
+-- FluvOS - COURSES SCHEMA
 -- ============================================================================
 -- Tabelas para cursos, módulos, aulas e progresso do usuário
 -- Página: /cursos

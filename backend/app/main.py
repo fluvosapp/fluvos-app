@@ -33,7 +33,7 @@ async def lifespan(_app: FastAPI):
 
 
 app = FastAPI(
-    title="Builders Performance - AI Assistant API",
+    title="FluvOS - AI Assistant API",
     version="1.0.0",
     lifespan=lifespan,
 )

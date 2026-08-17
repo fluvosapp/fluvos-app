@@ -10,11 +10,11 @@
 
 ## Objetivo
 
-Criar um catalogo vivo e interativo com TODOS os componentes, tokens, padroes de composicao, pages e estados do app Builders Performance. A pagina `/design-system` sera acessivel apenas em `localhost` / dev mode, bloqueada em producao via middleware.
+Criar um catalogo vivo e interativo com TODOS os componentes, tokens, padroes de composicao, pages e estados do app FluvOS. A pagina `/design-system` sera acessivel apenas em `localhost` / dev mode, bloqueada em producao via middleware.
 
 ## User Story
 
-**As a** desenvolvedor do Builders Performance,
+**As a** desenvolvedor do FluvOS,
 **I want** uma pagina de Design System com showcase de todos os componentes, tokens e padroes,
 **so that** eu possa visualizar, testar e manter consistencia visual em todo o app.
 

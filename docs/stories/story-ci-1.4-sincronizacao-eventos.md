@@ -11,12 +11,12 @@
 
 ## Objetivo
 
-Implementar o motor de sincronizacao que importa eventos de Google Calendar e Outlook Calendar para a tabela `events` do Builders Performance. A sync busca eventos no range -30 a +90 dias, transforma-os para o formato `AgendaEvent`, e faz upsert usando `external_event_id` para evitar duplicatas. Sync e disparado ao abrir a pagina `/agenda` e via botao manual.
+Implementar o motor de sincronizacao que importa eventos de Google Calendar e Outlook Calendar para a tabela `events` do FluvOS. A sync busca eventos no range -30 a +90 dias, transforma-os para o formato `AgendaEvent`, e faz upsert usando `external_event_id` para evitar duplicatas. Sync e disparado ao abrir a pagina `/agenda` e via botao manual.
 
 ## User Story
 
 > Como usuario,
-> Eu quero que meus eventos do Google Calendar e Outlook Calendar aparecam na minha agenda do Builders Performance,
+> Eu quero que meus eventos do Google Calendar e Outlook Calendar aparecam na minha agenda do FluvOS,
 > Para que eu tenha uma visao unificada de todos os meus compromissos.
 
 ## Tasks

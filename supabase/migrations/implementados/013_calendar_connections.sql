@@ -1,5 +1,5 @@
 -- ============================================================================
--- BUILDERS PERFORMANCE - CALENDAR CONNECTIONS MIGRATION (Idempotent)
+-- FluvOS - CALENDAR CONNECTIONS MIGRATION (Idempotent)
 -- ============================================================================
 -- Tabela para armazenar tokens OAuth de calendarios externos (Google/Outlook)
 -- e campo external_event_id na tabela events para mapeamento de eventos importados.

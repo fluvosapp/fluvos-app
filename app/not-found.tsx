@@ -35,7 +35,7 @@ export default function NotFound() {
               </Botao>
             </div>
             <p className="mt-6 text-xs text-muted-foreground">
-              Erro 404 • Builders Performance
+              Erro 404 • FluvOS
             </p>
           </CartaoConteudo>
         </Cartao>

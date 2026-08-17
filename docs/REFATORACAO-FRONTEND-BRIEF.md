@@ -1,7 +1,7 @@
-# Brief: Refatoração Completa do Frontend — Builders Performance
+# Brief: Refatoração Completa do Frontend — FluvOS
 
 ## Objetivo
-Refatorar TODO o frontend do app Builders Performance usando a referência visual em `docs/referencia-ui-builders.png`. O app atualmente está "morno/frio/pacato" e precisa virar algo **minimal mas com atitude — bold, vibrante, moderno**.
+Refatorar TODO o frontend do app FluvOS usando a referência visual em `docs/referencia-ui-builders.png`. O app atualmente está "morno/frio/pacato" e precisa virar algo **minimal mas com atitude — bold, vibrante, moderno**.
 
 ## Imagem de Referência
 O arquivo `docs/referencia-ui-builders.png` contém a referência visual principal (dashboard ConstructHub). Use essa imagem para extrair tokens de design.

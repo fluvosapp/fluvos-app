@@ -282,7 +282,7 @@ export default function FluxoOnboarding({ aoFinalizar }: PropsFluxoOnboarding) {
                     </h2>
                     <h1 className="font-titulo text-4xl font-semibold sm:text-5xl">
                       <span className="bg-gradient-to-r from-orange-600 via-orange-500 to-amber-400 bg-clip-text text-transparent">
-                        Builders Performance
+                        FluvOS
                       </span>
                     </h1>
                   </>

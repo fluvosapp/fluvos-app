@@ -1,6 +1,6 @@
 # Technical Debt Assessment - DRAFT
 
-**Projeto:** Builders Performance
+**Projeto:** FluvOS
 **Data:** 2026-01-29
 **Autor:** @architect (Aria) -- Synkra AIOS
 **Status:** DRAFT -- Pendente revisao dos especialistas
@@ -326,7 +326,7 @@ Onda 6 (Robustez):
 
 ### Para @ux-design-expert (Fase 6)
 
-1. **FE-C02 (Mobile nav):** Qual padrao e mais adequado para o Builders Performance -- bottom tab bar (estilo app mobile), hamburger menu com drawer, ou ambos? O app tem 7 rotas principais + subrotas de cursos.
+1. **FE-C02 (Mobile nav):** Qual padrao e mais adequado para o FluvOS -- bottom tab bar (estilo app mobile), hamburger menu com drawer, ou ambos? O app tem 7 rotas principais + subrotas de cursos.
 
 2. **FE-C01 (God Components):** Na refatoracao de `habitos/page.tsx` (2161 linhas), a sugestao e extrair `HabitosList`, `HabitosForm`, `MetasTab`, `ObjetivosBoard`. Essa divisao faz sentido do ponto de vista de UX? Ha fluxos que precisam coexistir no mesmo componente?
 

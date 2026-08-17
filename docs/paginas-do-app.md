@@ -67,7 +67,7 @@
 #### Será a página PRINCIPAL da plataforma e será como este exemplo:
 
 ┌─────────────────────────────────────────────────────────────┐
-│  ☰  BUILDERS PERFORMANCE                    🔔  👤 Lv.7    │
+│  ☰  FluvOS                    🔔  👤 Lv.7    │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  ┌─────────────────────────────────────────────────────┐   │
@@ -213,7 +213,7 @@
 
 ### Página 6: Página de cursos e aulas
 
-- Será uma página de cursos e aulas, com um catálogo de cursos e aulas como NETFLIX por exemplo, onde terá na página todos os cursos disponiveis do Builder Performance (Júnior) e ao clicar em cada curso, o usuário verá todas as aulas do determinado curso e ao clicar em cada aula, o usuário poderá assistir a aula, concluir o progresso dá aula, deixar um comentário, deixar um like na aula, etc...
+- Será uma página de cursos e aulas, com um catálogo de cursos e aulas como NETFLIX por exemplo, onde terá na página todos os cursos disponiveis do FluvOS (Júnior) e ao clicar em cada curso, o usuário verá todas as aulas do determinado curso e ao clicar em cada aula, o usuário poderá assistir a aula, concluir o progresso dá aula, deixar um comentário, deixar um like na aula, etc...
 
 - Na lateral esquerda de cada página de cada aula terá uma barra lateral que o usuário pode expandir e ocultar e todas as aulas listadas daquele determinado curso.
 

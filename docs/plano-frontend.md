@@ -1,4 +1,4 @@
-# Plano de Frontend — Builders Performance
+# Plano de Frontend — FluvOS
 
 ## 1) Objetivo e Escopo
 - Construir apenas o frontend em Next.js (App Router) com TypeScript, Tailwind e Shadcn.

@@ -1,4 +1,4 @@
-# Documento de Escopo: Web App SaaS "Builders Performance"
+# Documento de Escopo: Web App SaaS "FluvOS"
 
 **Objetivo Principal**: Criar o APP CENTRAL de rotina diária para alunos da comunidade Builders, aumentando performance e foco através de gamificação profunda e IA personalizada.
 
@@ -8,7 +8,7 @@
 
 ## Visão do Produto
 
-O Builders Performance não é apenas um app de produtividade com gamificação — **é um jogo de desenvolvimento pessoal** onde cada ação do usuário contribui para sua evolução. A proposta é que o aluno abra o app toda manhã como parte essencial da sua rotina, interaja ao longo do dia, e tenha no **Builder Assistant** um copiloto de IA que conhece profundamente seu contexto, objetivos e padrões.
+O FluvOS não é apenas um app de produtividade com gamificação — **é um jogo de desenvolvimento pessoal** onde cada ação do usuário contribui para sua evolução. A proposta é que o aluno abra o app toda manhã como parte essencial da sua rotina, interaja ao longo do dia, e tenha no **Builder Assistant** um copiloto de IA que conhece profundamente seu contexto, objetivos e padrões.
 
 **Diferenciação competitiva**:
 - Apps como TickTick e Todoist adicionam gamificação como feature secundária
@@ -628,7 +628,7 @@ A primeira coisa que o usuário vê ao abrir o app pela manhã:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  ☰  BUILDERS PERFORMANCE                    🔔  👤 Lv.7    │
+│  ☰  FluvOS                    🔔  👤 Lv.7    │
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  ┌─────────────────────────────────────────────────────┐   │
@@ -980,7 +980,7 @@ A primeira coisa que o usuário vê ao abrir o app pela manhã:
 
 ## Conclusão
 
-O Builders Performance tem potencial para se tornar o **app central de rotina** dos alunos da comunidade Builders, combinando:
+O FluvOS tem potencial para se tornar o **app central de rotina** dos alunos da comunidade Builders, combinando:
 
 1. **Gamificação como DNA** — Não uma feature, mas a essência do produto
 2. **Builder Assistant** — Diferencial competitivo único com IA contextual

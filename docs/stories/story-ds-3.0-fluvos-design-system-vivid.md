@@ -7,7 +7,7 @@
 **Tipo:** catalogo/design system + contrato de migracao; migracao do app em backlog
 **Documento normativo:** [`docs/frontend/fluvos-design-system/FLUVOS-PINTEREST-DESIGN-SYSTEM.md`](../frontend/fluvos-design-system/FLUVOS-PINTEREST-DESIGN-SYSTEM.md)
 **Rota de validacao visual:** `/design-system`
-**Substitui visualmente:** DS-1.0 e DS-2.0, que documentam a identidade anterior Builders Performance
+**Substitui visualmente:** DS-1.0 e DS-2.0, que documentam a identidade anterior do produto
 **Governanca:** validada por `@po` em 2026-08-16; fronteira de aceite A/B formalizada em 2026-08-17; implementacao do escopo A autorizada e em andamento
 
 ---
@@ -103,7 +103,7 @@ Conflitos devem ser resolvidos nesta ordem, sem excecao silenciosa:
 
 A implementacao existente em `/design-system` pertence ao sistema anterior e nao satisfaz esta story:
 
-- `app/design-system/page.tsx` ainda se identifica como “Builders Performance”;
+- `app/design-system/page.tsx` ainda se identificava com o nome anterior;
 - `app/design-system/tokens/page.tsx` documenta Manrope + Sora;
 - `app/layout.tsx` carrega Manrope + Sora por `next/font/google`;
 - `app/globals.css` possui variante e tokens `.dark`;
@@ -138,7 +138,7 @@ Os previews P01-P07 sao prototipos locais e deterministicos. Eles demonstram con
 - migrar componentes compartilhados e rotas de produto para tokens/componentes FluvOS;
 - integrar autenticacao/avatar real, dados reais, rotas, IA, voz, pagamentos e calendario;
 - executar validacoes E2E e gates globais da aplicacao apos a migracao, sem substituir os gates locais exigidos para o Escopo A;
-- remover identidade e copy Builders Performance do app real conforme plano incremental.
+- remover identidade e copy legadas do app real conforme plano incremental.
 
 Nenhum item do Escopo B pode ser usado isoladamente para reprovar ou impedir `Ready for Review` do Escopo A. O backlog B exige story(s) propria(s), criterios de aceite e autorizacao de implementacao.
 
@@ -280,7 +280,7 @@ AC-01 a AC-23 govern exclusivamente o Escopo A, salvo quando um criterio cita o 
 | AC-16 | `prefers-reduced-motion: reduce` remove pulsacoes, rotacoes, confete e smooth scroll sem apagar estado/feedback. | SRC-01 s. 9.3 | Inspecao nos dois modos de motion. |
 | AC-17 | O catalogo e seus prototipos A nao apresentam overflow ou acao obstruida em 320-1280 px, safe areas, teclado virtual e zoom 200%. | SRC-01 s. 8 | Matriz de viewport/zoom do catalogo documentada. |
 | AC-18 | Mockups P01-P07 e pins ficam confinados ao catalogo/documentacao, carregados de forma otimizada/lazy e sem import por surfaces do app real. | SRC-01 s. 11.2 | Bundle/Network inspection do catalogo + busca de imports fora do Escopo A. |
-| AC-19 | O catalogo documenta versao, aliases deprecados e caminho de migracao do sistema Builders Performance para FluvOS. | Skill design-system-patterns; estado atual | Changelog/migration section renderizada e arquivo fonte. |
+| AC-19 | O catalogo documenta versao, aliases deprecados e caminho de migracao do sistema visual legado para FluvOS. | Skill design-system-patterns; estado atual | Changelog/migration section renderizada e arquivo fonte. |
 | AC-20 | A rota e efetivamente bloqueada em producao, em conformidade com DS-1.0, ou a politica e formalmente alterada antes de remover o bloqueio. | DS-1.0 | Teste de request em ambiente production e inspeção do guard server-side. |
 | AC-21 | Quality gates aplicaveis ao Escopo A passam antes de `Ready for Review`; gates E2E/globais do app real pertencem ao backlog B. | Constitution V; fronteira A/B | Saida registrada de lint, typecheck, tests e build do checkout, com resultados atribuiveis ao Escopo A e falhas globais preexistentes separadas documentalmente. |
 | AC-22 | O catalogo demonstra barra segmentada, pontos/steps e slide/action progress, incluindo estados intermediarios e valor textual. | Audit P01, P03, P05; SRC-01 ss. 7.13, 7.17, 7.20 | Tres showcases renderizados e semantica acessivel inspecionada. |
@@ -356,7 +356,7 @@ Os itens abaixo permanecem deliberadamente desmarcados e nao integram o calculo 
 
 - [ ] 6.1 Migrar shell, header e navegacao compartilhados.
 - [ ] 6.2 Migrar componentes UI compartilhados para os novos tokens.
-- [ ] 6.3 Remover texto/identidade residual Builders Performance no escopo visual.
+- [ ] 6.3 Remover texto/identidade residual da marca anterior no escopo visual.
 - [ ] 6.4 Verificar que nenhuma mudanca de negocio foi introduzida.
 - [ ] 6.5 Atualizar consumidores de aliases deprecados conforme o plano.
 - [ ] 6.6 Migrar tipografia root para 42dot Sans e remover Manrope/Sora do app real.
@@ -420,7 +420,7 @@ Os itens abaixo permanecem deliberadamente desmarcados e nao integram o calculo 
 - `BrandMark` aceita apenas `FluvosBrandAssetId` e deriva alt de `identity | home-link | decorative`.
 - `lib/design-system/fluvos.ts` contem camadas primitivas, semanticas e de componente, alem de metadata de assets/referencias.
 - `app/design-system/fluvos-design-system.css` declara `color-scheme: light`, 42dot Sans via Google Fonts, reduced motion e breakpoints do catalogo.
-- buscas estaticas no novo escopo nao encontraram Sora, Manrope, PT Serif ou Builders Performance como implementacao viva; mencoes em docs sao historico/migracao.
+- buscas estaticas no novo escopo nao encontraram Sora, Manrope, PT Serif ou o nome anterior como implementacao viva; mencoes em docs sao historico/migracao.
 - buscas em `componentes/design-system/fluvos` e `app/design-system/paginas/page.tsx` nao encontraram raw hex; pigments residuais das primitives foram substituidos por tokens semanticos.
 - `git diff --check` executado sem erros; isso nao substitui os gates pendentes.
 - servidor `next dev` ativo em `http://localhost:3000`; as oito rotas do catalogo compilaram e responderam HTTP 200. Isso e apenas disponibilidade local, nao gate de qualidade.
@@ -446,7 +446,7 @@ Os itens abaixo permanecem deliberadamente desmarcados e nao integram o calculo 
 ## 13. Definition of Done
 
 - [ ] AC-01 a AC-23 possuem evidencia verificavel anexada nesta story.
-- [x] A pagina `/design-system` representa FluvOS e nao Builders Performance.
+- [x] A pagina `/design-system` representa FluvOS e nao a identidade anterior.
 - [x] White-only, identidade, tipografia, 16 masters, P01-P07 e pins 01-15 estao implementados/rastreaveis no catalogo isolado.
 - [x] Tokens em tres camadas e componentes reais sustentam o catalogo e estao documentados como API pronta para consumo posterior; integracao no produto pertence ao backlog B.
 - [x] Nao ha copia de assets proprietarios de terceiros nem feature de negocio conectada; exemplos sao estaticos e identificados.

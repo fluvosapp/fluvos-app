@@ -2,7 +2,7 @@
 
 ## Estado
 
-O catálogo local `/design-system` passa a representar o FluvOS. A identidade visual anterior “Builders Performance / ConstructHub” permanece no código legado do produto até uma migração incremental, mas não é mais autoridade para novas interfaces.
+O catálogo local `/design-system` passa a representar o FluvOS. A identidade visual anterior permanece no código legado do produto até uma migração incremental, mas não é mais autoridade para novas interfaces.
 
 ## Decisões incompatíveis
 
