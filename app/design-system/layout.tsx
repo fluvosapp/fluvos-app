@@ -1,114 +1,64 @@
-"use client"
-
+import type { Metadata } from "next"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
-import {
-  Palette,
-  Component,
-  LayoutGrid,
-  Monitor,
-  Home,
-  Layers,
-} from "lucide-react"
+import { notFound } from "next/navigation"
 
-import { cn } from "@/lib/utilidades"
+import { BrandMark } from "@/componentes/design-system/fluvos/primitives"
+import { DesignSystemNavigation } from "@/componentes/design-system/fluvos/navigation"
 
-const SECOES = [
-  { href: "/design-system", label: "Overview", icone: Home },
-  { href: "/design-system/tokens", label: "Tokens", icone: Palette },
-  {
-    href: "/design-system/componentes",
-    label: "Componentes",
-    icone: Component,
-  },
-  { href: "/design-system/padroes", label: "Padroes", icone: LayoutGrid },
-  { href: "/design-system/paginas", label: "Paginas", icone: Monitor },
-  { href: "/design-system/estados", label: "Estados", icone: Layers },
-] as const
+import "./fluvos-design-system.css"
+
+export const metadata: Metadata = {
+  title: "Design System | FluvOS",
+  description: "Catálogo vivo de marca, tokens, componentes e padrões do FluvOS.",
+  robots: { index: false, follow: false },
+}
 
 export default function DesignSystemLayout({
   children,
 }: {
   readonly children: React.ReactNode
 }) {
-  const pathname = usePathname()
+  if (process.env.NODE_ENV === "production") {
+    notFound()
+  }
 
   return (
-    <div className="flex min-h-screen">
-      <aside className="sticky top-0 hidden h-screen w-56 shrink-0 border-r border-border bg-card lg:block">
-        <div className="flex h-14 items-center border-b border-border px-4">
-          <Link
-            href="/design-system"
-            className="font-titulo text-sm font-bold tracking-tight"
-          >
-            Design System
-          </Link>
-        </div>
-        <nav className="space-y-1 p-3">
-          {SECOES.map(({ href, label, icone: Icone }) => {
-            const ativo =
-              href === "/design-system"
-                ? pathname === "/design-system"
-                : pathname.startsWith(href)
-
-            return (
-              <Link
-                key={href}
-                href={href}
-                className={cn(
-                  "flex items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors",
-                  ativo
-                    ? "bg-primary/10 font-medium text-primary"
-                    : "text-muted-foreground hover:bg-muted hover:text-foreground"
-                )}
-              >
-                <Icone className="h-4 w-4" />
-                {label}
-              </Link>
-            )
-          })}
-        </nav>
-        <div className="absolute bottom-0 left-0 right-0 border-t border-border p-3">
-          <p className="text-[10px] text-muted-foreground">
-            Dev-only — bloqueado em producao
-          </p>
-        </div>
-      </aside>
-
-      {/* Mobile nav */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-card lg:hidden">
-        <nav className="flex items-center justify-around px-2 py-1.5">
-          {SECOES.map(({ href, label, icone: Icone }) => {
-            const ativo =
-              href === "/design-system"
-                ? pathname === "/design-system"
-                : pathname.startsWith(href)
-
-            return (
-              <Link
-                key={href}
-                href={href}
-                className={cn(
-                  "flex flex-col items-center gap-0.5 rounded-md px-2 py-1 text-[10px] transition-colors",
-                  ativo
-                    ? "font-medium text-primary"
-                    : "text-muted-foreground"
-                )}
-              >
-                <Icone className="h-4 w-4" />
-                {label}
-              </Link>
-            )
-          })}
-        </nav>
-      </div>
-
-      <main
-        id="main-content"
-        className="flex-1 overflow-y-auto pb-20 lg:pb-0"
+    <div className="fluvos-design-system">
+      <a
+        href="#fds-main"
+        className="sr-only z-[100] rounded-full bg-white px-4 py-3 font-bold focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
       >
-        <div className="mx-auto max-w-5xl px-6 py-8">{children}</div>
-      </main>
+        Ir para o conteúdo
+      </a>
+
+      <div className="fds-layout">
+        <aside className="fds-sidebar" aria-label="Navegação do design system">
+          <div className="fds-sidebar-brand">
+            <Link href="/design-system" aria-label="FluvOS Design System — início">
+              <BrandMark
+                className="h-8 w-28"
+                asset="lockup-horizontal-pine"
+                purpose="home-link"
+                priority
+              />
+            </Link>
+          </div>
+
+          <DesignSystemNavigation />
+
+          <div className="fds-sidebar-foot">
+            <strong className="block text-[var(--fds-ink)]">White mode · v0.1</strong>
+            42dot Sans via Google Fonts. Marca oficial, croma vivid e componentes
+            rastreáveis.
+          </div>
+        </aside>
+
+        <main id="fds-main" className="fds-content">
+          <div className="fds-content-inner">{children}</div>
+        </main>
+
+        <DesignSystemNavigation mobile />
+      </div>
     </div>
   )
 }

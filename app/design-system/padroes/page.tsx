@@ -1,271 +1,66 @@
-"use client"
+import { ArrowRight, ChevronRight, Clock3, Crown, Mic, Sparkles, Trash2 } from "lucide-react"
 
-import { Check, Clock, Plus, Search, Target } from "lucide-react"
+import { FluvosBadge, FluvosButton, FluvosCard, FluvosPanel, FluvosProgress, FluvosSection, StateRow } from "@/componentes/design-system/fluvos/primitives"
 
-import { ComponentPreview } from "@/componentes/design-system/component-preview"
-import { ShowcaseSection } from "@/componentes/design-system/showcase-section"
-import { Botao } from "@/componentes/ui/botao"
-import {
-  Cartao,
-  CartaoCabecalho,
-  CartaoTitulo,
-  CartaoDescricao,
-  CartaoConteudo,
-} from "@/componentes/ui/cartao"
-import { Progresso } from "@/componentes/ui/progresso"
-import { Separador } from "@/componentes/ui/separador"
-import { Esqueleto, EsqueletoCartao, EsqueletoKanban } from "@/componentes/ui/esqueleto"
-import { EstadoVazio } from "@/componentes/ui/estado-vazio"
+const patterns = [
+  ["P01", "Dashboard modular", "Resumo diário + agenda + progresso + ação imediata", "Priorizar; aprofundar sob demanda"],
+  ["P02", "Agenda temporal", "Date strip + grade horária + eventos sobrepostos", "Tempo é o eixo; cor diferencia categoria"],
+  ["P03", "Task deck", "Uma tarefa focal + detalhes + conclusão", "Gesto acelera; botão preserva acesso"],
+  ["P04", "Creation sheet", "Tipo + campos + metadados + voz", "Input rápido; revisão antes de salvar"],
+  ["P05", "Moments", "Fila de manutenção + decisão + lixeira", "Excluir é recuperável e explicado"],
+  ["P06", "Listas e Premium", "Categorias + favorito + planos + benefícios", "Valor antes de preço; seleção explícita"],
+  ["P07", "Reunião e IA", "Contexto + resumo + transformação + action items", "IA mostra origem, saída e confirmação"],
+] as const
+
+const operationalFlows = [
+  ["F01", "Planejar o dia", "Hoje → resumo vivo → tarefa focal → concluir → desfazer", "P01 · P03"],
+  ["F02", "Criar trabalho", "CTA + → bottom sheet → tarefa/lista/voz → revisão → salvar", "P04"],
+  ["F03", "Administrar o tempo", "Mês → data → agenda → reunião → resumo → ações de IA", "P02 · P07"],
+  ["F04", "Limpar pendências", "Moments → decisão → lixeira temporária → recuperar ou confirmar", "P05 · P06"],
+  ["F05", "Organizar contextos", "Listas → favorito/detalhe → swipe revelado → exclusão recuperável", "P06"],
+  ["F06", "Ampliar capacidades", "Recurso bloqueado → benefícios → plano → compra/restauração", "P06"],
+] as const
 
 export default function PadroesPage() {
   return (
-    <div className="space-y-12">
-      <div className="space-y-2">
-        <h1 className="font-titulo text-3xl font-bold tracking-tight">
-          Padroes de Composicao
-        </h1>
-        <p className="text-muted-foreground">
-          Patterns recorrentes do app — shells de pagina, formularios, listas,
-          kanban, dashboard e estados.
-        </p>
-      </div>
+    <div>
+      <header className="fds-page-header"><div><p className="fds-eyebrow">Composição</p><h1 className="fds-page-title">Sete padrões, uma lógica operacional.</h1><p className="fds-page-description">P01–P07 deixam de ser screenshots inspiracionais e viram contratos repetíveis de estrutura, hierarquia, comportamento, fallback e acessibilidade.</p></div><FluvosBadge variant="brand">P01–P07</FluvosBadge></header>
 
-      {/* 5.1 — Page Shells */}
-      <ShowcaseSection
-        id="page-shells"
-        titulo="Page Shells"
-        descricao="Layout padrao de paginas com titulo, descricao e acoes"
-      >
-        <ComponentPreview titulo="Shell com acoes">
-          <div className="space-y-4 rounded-lg border border-border p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <h2 className="text-lg font-semibold">Titulo da Pagina</h2>
-                <p className="text-sm text-muted-foreground">
-                  Descricao breve do conteudo desta pagina
-                </p>
-              </div>
-              <Botao size="sm">
-                <Plus className="mr-2 h-4 w-4" />
-                Novo Item
-              </Botao>
-            </div>
-            <Separador />
-            <div className="h-32 rounded-md bg-muted/30 flex items-center justify-center text-sm text-muted-foreground">
-              Conteudo da pagina
-            </div>
-          </div>
-        </ComponentPreview>
-      </ShowcaseSection>
+      <FluvosSection eyebrow="Mapa" title="Padrões rastreáveis">
+        <div className="fds-token-list">{patterns.map(([id,name,formula,rule]) => <div className="fds-token-row" key={id}><div><FluvosBadge variant="brand">{id}</FluvosBadge><strong className="ml-2">{name}</strong></div><span>{formula}</span><span className="fds-token-description">{rule}</span></div>)}</div>
+      </FluvosSection>
 
-      {/* 5.2 — Form Patterns */}
-      <ShowcaseSection
-        id="form-patterns"
-        titulo="Form Patterns"
-        descricao="Padroes de formulario (criacao, edicao, filtros)"
-      >
-        <div className="space-y-4">
-          <ComponentPreview titulo="Formulario de criacao">
-            <div className="max-w-md space-y-4">
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Titulo</label>
-                <div className="h-10 rounded-md border border-input bg-background px-3" />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Descricao</label>
-                <div className="h-20 rounded-md border border-input bg-background px-3" />
-              </div>
-              <div className="flex gap-2">
-                <Botao variant="outline">Cancelar</Botao>
-                <Botao>Salvar</Botao>
-              </div>
-            </div>
-          </ComponentPreview>
+      <FluvosSection eyebrow="Operacional" title="Seis jornadas de ponta a ponta" description="Cada padrão entra em uma jornada observável. A tela deixa de ser um destino isolado e passa a declarar disparador, estado intermediário, confirmação e recuperação.">
+        <div className="fds-flow-contract-grid">{operationalFlows.map(([id,name,path,refs]) => <FluvosCard className="fds-flow-contract" key={id}><div className="flex items-center justify-between gap-3"><FluvosBadge variant="brand">{id}</FluvosBadge><span className="text-[10px] font-bold text-[var(--fds-text-secondary)]">{refs}</span></div><h3>{name}</h3><p>{path}</p></FluvosCard>)}</div>
+      </FluvosSection>
 
-          <ComponentPreview titulo="Barra de filtros">
-            <div className="flex flex-wrap items-center gap-3">
-              <div className="flex h-9 w-64 items-center gap-2 rounded-md border border-input bg-background px-3">
-                <Search className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground">Buscar...</span>
-              </div>
-              <Botao variant="outline" size="sm">Todos</Botao>
-              <Botao variant="secondary" size="sm">Ativos</Botao>
-              <Botao variant="outline" size="sm">Concluidos</Botao>
-            </div>
-          </ComponentPreview>
-        </div>
-      </ShowcaseSection>
+      <FluvosSection eyebrow="P01" title="Dashboard modular" description="O primeiro viewport responde: o que acontece hoje, o que devo fazer agora e como estou avançando.">
+        <FluvosPanel className="fds-progressive-gradient-blur p-6"><div className="fds-progressive-gradient-blur__chromatic" aria-hidden="true" /><div className="fds-progressive-gradient-blur__content fds-grid-3"><FluvosCard className="p-5"><p className="text-sm font-bold">Hoje</p><p className="mt-2 text-4xl font-bold">5 tarefas</p><FluvosButton className="mt-6 w-full">Organizar agora</FluvosButton></FluvosCard><FluvosCard accent="growth" className="p-5"><FluvosBadge variant="success">Foco</FluvosBadge><p className="mt-4 text-3xl font-bold">02:30</p><div className="mt-6"><FluvosProgress value={68} label="Meta do dia" tone="growth" /></div></FluvosCard><FluvosCard accent="brand" className="p-5"><FluvosBadge variant="brand">Próximo</FluvosBadge><h3 className="mt-4 font-bold">Reunião de produto</h3><p className="mt-2 text-sm text-[var(--fds-text-secondary)]">09:15–10:00 · 6 pessoas</p><FluvosButton className="mt-5">Abrir agenda</FluvosButton></FluvosCard></div></FluvosPanel>
+      </FluvosSection>
 
-      {/* 5.3 — List Patterns */}
-      <ShowcaseSection
-        id="list-patterns"
-        titulo="List Patterns"
-        descricao="Listas simples, com acoes e agrupadas"
-      >
-        <ComponentPreview titulo="Lista com acoes">
-          <div className="divide-y divide-border rounded-lg border border-border">
-            {["Completar modulo de React", "Estudar TypeScript", "Revisar PRD"].map(
-              (item, i) => (
-                <div
-                  key={item}
-                  className="flex items-center justify-between px-4 py-3"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className={`h-2 w-2 rounded-full ${i === 0 ? "bg-primary" : "bg-muted"}`} />
-                    <span className="text-sm">{item}</span>
-                  </div>
-                  <Botao variant="ghost" size="sm">
-                    <Check className="h-4 w-4" />
-                  </Botao>
-                </div>
-              )
-            )}
-          </div>
-        </ComponentPreview>
-      </ShowcaseSection>
+      <FluvosSection eyebrow="P02" title="Agenda temporal" description="Seleção de data, rótulos de hora e eventos compartilham o mesmo eixo. O layout reflowa em mobile sem depender de hover.">
+        <FluvosPanel className="p-6"><div className="flex gap-2 overflow-x-auto">{["13 Ter","14 Qua","15 Qui","16 Sex","17 Sáb"].map((day,index)=><button key={day} className="min-h-[72px] min-w-20 rounded-3xl border border-[var(--fds-border)] px-3 text-sm font-bold" style={index===2?{background:"#D43F00",color:"white",borderColor:"#D43F00"}:undefined}>{day}</button>)}</div><div className="mt-6 grid grid-cols-[52px_1fr] gap-x-3"><span className="text-xs text-[var(--fds-text-secondary)]">09h</span><FluvosCard accent="brand" className="p-4"><p className="text-xs">09:15–11:45</p><h3 className="mt-1 font-bold">Introdução ao Front-End</h3></FluvosCard><span className="mt-5 text-xs text-[var(--fds-text-secondary)]">13h</span><FluvosCard accent="growth" className="mt-5 p-4"><p className="text-xs">12:45–15:00</p><h3 className="mt-1 font-bold">Desenvolvimento de produto</h3></FluvosCard></div></FluvosPanel>
+      </FluvosSection>
 
-      {/* 5.4 — Kanban Pattern */}
-      <ShowcaseSection
-        id="kanban-pattern"
-        titulo="Kanban Pattern"
-        descricao="Colunas drag-and-drop para gestao de tarefas"
-      >
-        <ComponentPreview titulo="Kanban board">
-          <div className="flex gap-4 overflow-x-auto pb-2">
-            {[
-              { titulo: "A Fazer", cor: "bg-chart-5", itens: ["Tarefa A", "Tarefa B"] },
-              { titulo: "Em Andamento", cor: "bg-primary", itens: ["Tarefa C"] },
-              { titulo: "Concluido", cor: "bg-green-500", itens: ["Tarefa D", "Tarefa E", "Tarefa F"] },
-            ].map(({ titulo, cor, itens }) => (
-              <div key={titulo} className="w-60 shrink-0 rounded-lg bg-muted/30 p-3">
-                <div className="mb-3 flex items-center gap-2">
-                  <div className={`h-2 w-2 rounded-full ${cor}`} />
-                  <h4 className="text-sm font-semibold">{titulo}</h4>
-                  <span className="ml-auto rounded-full bg-muted px-2 text-xs text-muted-foreground">
-                    {itens.length}
-                  </span>
-                </div>
-                <div className="space-y-2">
-                  {itens.map((item) => (
-                    <div
-                      key={item}
-                      className="rounded-md border border-border bg-card p-3 text-sm"
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </ComponentPreview>
-      </ShowcaseSection>
+      <FluvosSection eyebrow="P03" title="Task deck" description="A tarefa atual recebe profundidade; próximas cartas aparecem apenas como contexto. Swipe não substitui controles explícitos.">
+        <div className="fds-grid-2"><FluvosPanel className="relative min-h-[390px] overflow-hidden bg-[var(--fds-surface-low)] p-8"><div className="absolute inset-x-16 bottom-8 top-20 translate-y-8 rounded-[32px] bg-white/70 shadow-[var(--fds-shadow-1)]" /><FluvosCard elevated className="relative p-6"><FluvosBadge variant="brand">Alta prioridade</FluvosBadge><h3 className="mt-5 text-2xl font-bold">Repor mantimentos</h3><p className="mt-2 text-[var(--fds-text-secondary)]">Faça uma compra rápida de itens frescos.</p><p className="mt-5 flex items-center gap-2 text-sm"><Clock3 className="size-4" />10:00–11:30</p><FluvosButton className="mt-7 w-full" size="lg">Marcar como concluída <ArrowRight className="size-4" /></FluvosButton></FluvosCard></FluvosPanel><FluvosPanel className="p-6"><h3 className="font-bold">Alternativas equivalentes</h3><StateRow label="Teclado" state="Enter / Espaço" done /><StateRow label="Botão visível" state="Obrigatório" done /><StateRow label="Swipe" state="Aprimoramento" done /><StateRow label="Desfazer" state="Temporário" done /></FluvosPanel></div>
+      </FluvosSection>
 
-      {/* 5.5 — Dashboard Pattern */}
-      <ShowcaseSection
-        id="dashboard-pattern"
-        titulo="Dashboard Pattern"
-        descricao="Cards de metricas e resumo"
-      >
-        <ComponentPreview titulo="Grid de metricas">
-          <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-            {[
-              { titulo: "Foco Hoje", valor: "2h 30m", icone: Clock },
-              { titulo: "Tarefas", valor: "8/12", icone: Check },
-              { titulo: "Streak", valor: "15 dias", icone: Target },
-              { titulo: "XP Hoje", valor: "+450", icone: Plus },
-            ].map(({ titulo, valor, icone: Icone }) => (
-              <Cartao key={titulo}>
-                <CartaoConteudo className="p-4">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-xs text-muted-foreground">{titulo}</p>
-                      <p className="text-xl font-bold">{valor}</p>
-                    </div>
-                    <Icone className="h-5 w-5 text-muted-foreground" />
-                  </div>
-                </CartaoConteudo>
-              </Cartao>
-            ))}
-          </div>
-        </ComponentPreview>
-      </ShowcaseSection>
+      <FluvosSection eyebrow="P04" title="Creation sheet e voz" description="A camada nasce do contexto, preserva o fundo e mantém uma única decisão primária.">
+        <FluvosPanel className="bg-[var(--fds-surface-low)] p-6"><div className="mx-auto max-w-2xl rounded-[32px] bg-white p-6 shadow-[var(--fds-shadow-3)]"><div className="mx-auto h-1 w-12 rounded-full bg-[var(--fds-border-strong)]" /><div className="mt-5 flex gap-2"><FluvosBadge variant="brand">Tarefa</FluvosBadge><FluvosBadge>Lista</FluvosBadge><FluvosBadge><Mic className="size-3" />Voz</FluvosBadge></div><h3 className="mt-7 text-xl font-bold">O que você quer criar?</h3><div className="mt-4 rounded-2xl border-2 border-[var(--fds-action)] p-4 text-[var(--fds-text-secondary)]">Eu quero…</div><div className="mt-5 flex flex-wrap gap-2"><FluvosBadge>Hoje</FluvosBadge><FluvosBadge>Prioridade</FluvosBadge><FluvosBadge>Responsável</FluvosBadge></div><FluvosButton className="mt-7 w-full" size="lg">Revisar e criar</FluvosButton></div></FluvosPanel>
+      </FluvosSection>
 
-      {/* 5.6 — Loading States */}
-      <ShowcaseSection
-        id="loading-states"
-        titulo="Loading States"
-        descricao="Skeleton de cada pattern"
-      >
-        <div className="space-y-4">
-          <ComponentPreview titulo="Skeleton de cartao">
-            <div className="max-w-sm">
-              <EsqueletoCartao comCabecalho comDescricao comRodape />
-            </div>
-          </ComponentPreview>
-          <ComponentPreview titulo="Skeleton kanban">
-            <EsqueletoKanban cartoesPorColuna={[2, 1, 3]} />
-          </ComponentPreview>
-        </div>
-      </ShowcaseSection>
+      <FluvosSection eyebrow="P05" title="Moments: manutenção recuperável" description="Itens antigos são tratados um a um. Snooze, manter e excluir são explícitos; a lixeira exige confirmação posterior.">
+        <div className="fds-grid-2"><FluvosPanel className="fds-progressive-gradient-blur fds-progressive-gradient-blur--green p-7"><div className="fds-progressive-gradient-blur__chromatic" aria-hidden="true" /><div className="fds-progressive-gradient-blur__content"><FluvosBadge variant="success">5 Moments restantes</FluvosBadge><FluvosCard className="mt-8 rotate-[-2deg] p-6 text-[var(--fds-ink)]"><FluvosBadge variant="neutral">Adiada por 5 dias</FluvosBadge><h3 className="mt-5 text-2xl font-bold">Revisar planejamento</h3><p className="mt-2 text-[var(--fds-text-secondary)]">Essa tarefa ainda é relevante?</p><div className="mt-6 flex gap-3"><FluvosButton variant="outline" className="flex-1">Depois</FluvosButton><FluvosButton variant="success" className="flex-1">Manter</FluvosButton></div></FluvosCard></div></FluvosPanel><FluvosPanel className="p-7"><FluvosBadge variant="danger"><Trash2 className="size-3" />2 na lixeira</FluvosBadge><h3 className="mt-5 text-xl font-bold">Exclusão em duas etapas</h3><p className="mt-2 text-sm leading-6 text-[var(--fds-text-secondary)]">A tarefa sai do fluxo, mas permanece recuperável até a confirmação final.</p><FluvosButton className="mt-6" variant="danger">Abrir lixeira</FluvosButton></FluvosPanel></div>
+      </FluvosSection>
 
-      {/* 5.7 — Error States */}
-      <ShowcaseSection
-        id="error-states"
-        titulo="Error States"
-        descricao="404, 500, error boundary"
-      >
-        <div className="space-y-4">
-          <ComponentPreview titulo="Erro generico">
-            <Cartao className="border-destructive/30 bg-destructive/5">
-              <CartaoConteudo className="p-6 text-center">
-                <p className="text-lg font-semibold text-destructive">Erro ao carregar dados</p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Ocorreu um erro inesperado. Tente novamente.
-                </p>
-                <Botao variant="outline" size="sm" className="mt-4">
-                  Tentar novamente
-                </Botao>
-              </CartaoConteudo>
-            </Cartao>
-          </ComponentPreview>
+      <FluvosSection eyebrow="P06" title="Listas e Premium" description="A lista prioriza reconhecimento rápido. O paywall explica capacidade antes de pedir escolha.">
+        <div className="fds-grid-2"><FluvosPanel className="p-4">{["Trabalho","Finanças","Esporte","Casa","Pessoal"].map((item,index)=><div key={item} className="flex min-h-[72px] items-center gap-3 border-b border-[var(--fds-border)] last:border-0"><span className="grid size-11 place-items-center rounded-2xl bg-[var(--fds-surface-low)] font-bold">{item[0]}</span><span className="flex-1"><strong>{item}</strong><span className="block text-sm text-[var(--fds-text-secondary)]">{index+1} tarefas vinculadas</span></span><ChevronRight className="size-4" /></div>)}</FluvosPanel><FluvosPanel className="p-6"><FluvosBadge variant="premium"><Crown className="size-3" />FluvOS Premium</FluvosBadge><h3 className="mt-5 text-2xl font-bold">Mais controle, sem mais ruído.</h3><div className="mt-5"><StateRow label="Planejamento inteligente" state="Incluído" done /><StateRow label="Moments ilimitados" state="Incluído" done /><StateRow label="Lembretes avançados" state="Incluído" done /></div><FluvosButton className="mt-6 w-full" size="lg">Continuar</FluvosButton></FluvosPanel></div>
+      </FluvosSection>
 
-          <ComponentPreview titulo="Estado vazio (sem dados)">
-            <EstadoVazio
-              titulo="Nenhum dado disponivel"
-              descricao="Comece adicionando seu primeiro item."
-            />
-          </ComponentPreview>
-        </div>
-      </ShowcaseSection>
-
-      {/* 5.8 — Navigation Patterns */}
-      <ShowcaseSection
-        id="navigation-patterns"
-        titulo="Navigation Patterns"
-        descricao="Sidebar, topbar e mobile bottom nav"
-      >
-        <ComponentPreview titulo="Bottom Tab Bar (mobile)">
-          <div className="rounded-lg border border-border bg-card p-2">
-            <div className="flex items-center justify-around">
-              {[
-                { label: "Foco", icone: Target },
-                { label: "Tarefas", icone: Check },
-                { label: "Habitos", icone: Clock },
-                { label: "Inicio", icone: Plus },
-              ].map(({ label, icone: Icone }) => (
-                <div
-                  key={label}
-                  className="flex flex-col items-center gap-0.5 px-3 py-1.5"
-                >
-                  <Icone className="h-5 w-5 text-muted-foreground" />
-                  <span className="text-[10px] text-muted-foreground">{label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </ComponentPreview>
-      </ShowcaseSection>
+      <FluvosSection eyebrow="P07" title="Reunião e IA revisável" description="Resumo, transcrição e ações derivadas mantêm vínculo com a reunião original. Sugestão nunca vira tarefa sem confirmação.">
+        <FluvosPanel className="p-6"><div className="flex flex-wrap items-start justify-between gap-4"><div><FluvosBadge variant="ai"><Sparkles className="size-3" />AI Assist</FluvosBadge><h3 className="mt-4 text-2xl font-bold">Daily de produto</h3><p className="mt-2 text-sm text-[var(--fds-text-secondary)]">08:15–08:30 · 6 participantes</p></div><FluvosButton variant="info"><Sparkles className="size-4" />Gerar ações</FluvosButton></div><div className="mt-6 grid gap-3">{["Revisar ajustes visuais","Validar regressões responsivas","Preparar teaser de lançamento"].map((item)=><label key={item} className="flex min-h-14 items-center gap-3 rounded-2xl border border-[var(--fds-border)] p-4"><input type="checkbox" /><span className="flex-1 font-semibold">{item}</span><FluvosBadge variant="ai">Sugestão</FluvosBadge></label>)}</div></FluvosPanel>
+      </FluvosSection>
     </div>
   )
 }
